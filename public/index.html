@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <header>
+<!--   <header>
     <h1>Client Site</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, aut sunt. Fugit pariatur quisquam dolor nesciunt saepe et provident vitae consequatur blanditiis expedita! Quo provident sunt eligendi ab cupiditate voluptatem.</p>
-  </header>
+  </header> -->
   
   <hr class="header-break" />
 
@@ -23,12 +23,17 @@
       
       /** REQUIRED CONFIGURATION VARIABLES **/
 
-      var brickwork_config = function () {
+      brickwork_settings = {
+        api_root: "//jcrew.brickworksoftware.dev:3000/retail/en/api/v3/"
+      };
+
+
+      var BRICKWORK_CONFIG = function () {
 
         this.BW_CONFIG = {};
-        this.BW_CONFIG.bwApiRoot = '' ;
+        this.BW_CONFIG.baseURL = 'http://jcrew.brickworksoftware.dev:3000';
         // this will have to become store_id
-        this.BW_CONFIG.pageSlug = 'north-conway';
+        this.BW_CONFIG.pageSlug = 'toronto-eaton-centre';
       };
 
       // let's call the bw client inside a closure
@@ -40,7 +45,7 @@
         var s = d.createElement('script');
 
         // BW Client
-        s.src = '//nike.dev:3000/assets/v3/client.js';
+        s.src = '//jcrew.brickworksoftware.dev:3000/assets/v3/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
 
@@ -56,9 +61,10 @@
     <noscript>
       Please enable JavaScript to view events powered by <a href="http://brickworksoftware.com/?ref_noscript" rel="nofollow">Brickwork</a>.
     </noscript>
-
-    <div id="brickwork-event-widget"></div>
-    <link rel="stylesheet" href="http://nike.dev:3000/assets/v3/widgets/events/event_widget.css" />
+  
+    <!--  -->
+    <div data-bw-component="EventWidget" id="brickwork-event-widget"></div>
+    <link rel="stylesheet" href="http://jcrew.brickworksoftware.dev:3000/assets/v3/widgets/events/event_widget.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
 
 
