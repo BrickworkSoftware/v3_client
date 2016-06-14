@@ -3,77 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Widget</title>
-  <script src="./react.0.11.0.js"></script>
-  <link rel="stylesheet" href="./styles.css">
+  <!-- <script src="./react.0.11.0.js"></script> -->
+  <!-- <link rel="stylesheet" href="./styles.css"> -->
 </head>
 <body>
 
-<!--   <header>
-    <h1>Client Site</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, aut sunt. Fugit pariatur quisquam dolor nesciunt saepe et provident vitae consequatur blanditiis expedita! Quo provident sunt eligendi ab cupiditate voluptatem.</p>
-  </header> -->
-  
-  <hr class="header-break" />
-
-  
-
-    
-    
-    <script>
+  <div style="padding:0 10%;">
       
+    <div data-bw-component="EventWidget" id="brickwork-event-widget"></div>
+    <script>
       /** REQUIRED CONFIGURATION VARIABLES **/
-
-      brickwork_settings = {
-        api_root: "//jcrew.brickworksoftware.dev:3000/retail/en/api/v3/"
-      };
-
-
-      var BRICKWORK_CONFIG = function () {
-
-        this.BW_CONFIG = {};
-        this.BW_CONFIG.baseURL = 'http://jcrew.brickworksoftware.dev:3000';
-        // this will have to become store_id
-        this.BW_CONFIG.pageSlug = 'toronto-eaton-centre';
-      };
-
-      // let's call the bw client inside a closure
-      // and we will call the config vars in the
-      // context of the EventWidget inside client.js
-
-      (function() {
-        var d = document;
-        var s = d.createElement('script');
-
-        // BW Client
-        s.src = '//jcrew.brickworksoftware.dev:3000/assets/v3/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-
-        // FontAwesome
-        // var s2 = d.createElement('script');
-        // s2.src = '//use.fontawesome.com/15f313ab11.js';
-        // s2.setAttribute('data-timestamp', +new Date());
-        // (d.head || d.body).appendChild(s2);
-
-      })();
-
+      var BrickworkSoftware = BrickworkSoftware || {};
+      BrickworkSoftware.config = BrickworkSoftware.config || {};
+      BrickworkSoftware.config.apiRoot = "//jcrew.brickworksoftware.dev:3000/retail/en/api/v3/";
+      BrickworkSoftware.config.baseURL = "//jcrew.brickworksoftware.dev:3000";
+      BrickworkSoftware.config.storeNumber = "403"; // REPLACE WITH YOUR UNIQUE STORE NUMBER AS A *STRING*
+      (function (d, s, id) {
+        var t, js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src= "//jcrew.brickworksoftware.dev:3000/assets/v3/embed.js";
+        fjs.parentNode.insertBefore(js, fjs);
+        (t = { _e: [], ready: function (f) { t._e.push(f) } });
+      }(document, "script", "brickwork-event-embed"));
     </script>
     <noscript>
-      Please enable JavaScript to view events powered by <a href="http://brickworksoftware.com/?ref_noscript" rel="nofollow">Brickwork</a>.
+      Please enable JavaScript to view events powered by 
+      <a href="http://brickworksoftware.com/?ref_noscript" rel="nofollow">Brickwork</a>.
     </noscript>
-  
-    <!--  -->
-    <div data-bw-component="EventWidget" id="brickwork-event-widget"></div>
-    <link rel="stylesheet" href="http://jcrew.brickworksoftware.dev:3000/assets/v3/widgets/events/event_widget.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.3.15/slick.css" />
 
-
-
+  </div>
 
   <script>
-    window.onload = function () {
-      console.log('I am the host page developer and I want to use ' + React.version + ' version of React.');
-    }
+    // window.onload = function () {
+    //   console.log('I am the host page developer and I want to use ' + React.version + ' version of React.');
+    // }
   </script>
 </body>
 </html>
