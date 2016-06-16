@@ -15,14 +15,14 @@
       /** REQUIRED CONFIGURATION VARIABLES **/
       var BrickworkSoftware = BrickworkSoftware || {};
       BrickworkSoftware.config = BrickworkSoftware.config || {};
-      BrickworkSoftware.config.apiRoot = "//jcrew.brickworksoftware.dev:3000/retail/en/api/v3/";
-      BrickworkSoftware.config.baseURL = "//jcrew.brickworksoftware.dev:3000";
+      BrickworkSoftware.config.apiRoot = "//jcrew-staging.brickworksoftware.com/retail/en/api/v3/";
+      BrickworkSoftware.config.baseURL = "//jcrew-staging.brickworksoftware.com";
       BrickworkSoftware.config.storeNumber = "403"; // REPLACE WITH YOUR UNIQUE STORE NUMBER AS A *STRING*
       (function (d, s, id) {
         var t, js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
         js = d.createElement(s); js.id = id;
-        js.src= "//jcrew.brickworksoftware.dev:3000/assets/v3/embed.js";
+        js.src= "//jcrew-staging.brickworksoftware.com/assets/v3/embed.js";
         fjs.parentNode.insertBefore(js, fjs);
         (t = { _e: [], ready: function (f) { t._e.push(f) } });
       }(document, "script", "brickwork-event-embed"));
